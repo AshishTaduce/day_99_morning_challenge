@@ -19,8 +19,10 @@ class Leaf{
   Leaf left;
   Leaf right;
   Leaf(this.value);
-  int calculateValue(){
-    if(value is int){
+  double calculateValue(){
+    print('The value is $value');
+
+    if(value is double){
       return value;
     }
     else{
@@ -32,23 +34,23 @@ class Leaf{
 Map math_it_up = {
   '+': (x, y) => x + y,
   '-': (x, y) => x - y,
-  '/': (x, y) => (x / y).toInt(),
+  '/': (x, y) => (x / y),
   '*': (x, y) => x * y,
 };
 
 void main() {
   Leaf leaf1 = Leaf('*');
-  Leaf leaf2 = Leaf('+');
+  Leaf leaf2 = Leaf('/');
   Leaf leaf3 = Leaf('+');
   Leaf leaf4 = Leaf('/');
-  leaf4.left = Leaf(8);
-  leaf4.right = Leaf(2);
+  leaf4.left = Leaf(8.0);
+  leaf4.right = Leaf(2.0);
 
   leaf1.left = leaf2;
   leaf1.right = leaf3;
-  leaf2.left = Leaf(3);
-  leaf2.right = Leaf(2);
-  leaf3.left = Leaf(4);
+  leaf2.left = Leaf(3.0);
+  leaf2.right = Leaf(2.0);
+  leaf3.left = Leaf(4.0);
 //  leaf3.right = Leaf(5);
   leaf3.right = leaf4;
   print(leaf1.calculateValue());
