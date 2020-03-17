@@ -34,7 +34,7 @@ class Leaf{
 Map math_it_up = {
   '+': (x, y) => x + y,
   '-': (x, y) => x - y,
-  '/': (x, y) => (x / y),
+  '/': (x, y) => ((x == 0 || y == 0)? null : x / y),
   '*': (x, y) => x * y,
 };
 
